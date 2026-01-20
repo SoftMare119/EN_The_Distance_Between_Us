@@ -1,0 +1,71 @@
+[
+  {
+    "id": "p1",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-12-19 19:20",
+    "content": "Lol someone on the subway was watching the same series as me",
+    "likes": 12,
+    "comments": 3
+  },
+  {
+    "id": "p2",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-10-20 08:15",
+    "content": "Hope everything could slow down a bit.",
+    "likes": 14,
+    "comments": 0
+  },
+  {
+    "id": "p3",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-08-10 14:00",
+    "content": "Visited an old library today, had that nostalgic feeling of digging through old records.",
+    "images": [
+      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=60"
+    ],
+    "likes": 21,
+    "comments": 5
+  },
+  {
+    "id": "p4",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-08-03 08:15",
+    "content": "Haven't been sleeping well lately, does anyone know any good sleep remedies? 😔",
+    "likes": 10,
+    "comments": 8
+  },
+  {
+    "id": "p5",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-07-15 21:23",
+    "content": "Went to the WTM gaming session today, was lucky enough to get invited to try out a new mystery game called \"Dragon Wright: Ace Attorney\" 😄\nThere was one puzzle I tried solving with common methods like Caesar Cipher and Atbash, but couldn't crack it. In the end, the staff just gave me the answer... No way, when the game officially launches, I'm definitely going to spend all my time until I figure it out 💪",
+    "images": ["pics/weblog_post.jpg"],
+    "likes": 41,
+    "comments": 12
+  },
+  {
+    "id": "p6",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-06-28 23:15",
+    "content": "Finally finished this game.\nThe story hit pretty hard, need some time to process it.",
+    "likes": 11,
+    "comments": 0
+  },
+  {
+    "id": "p7",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-05-13 08:15",
+    "content": "🎂 Today is my uncle's birthday.\n\nHonestly, reconnecting with relatives is pretty unexpected in itself. Growing up, I never really had a strong sense of what \"family\" meant. Even if it's just a distant cousin, I'm still very grateful that there's someone who remembers me, responds, and cares.\n\nUncle, I hope everything goes smoothly for you and you stay healthy. Happy birthday!",
+    "likes": 27,
+    "comments": 4
+  },
+  {
+    "id": "p8",
+    "author": { "name": "heyitsnina", "avatar": "pics/chen_nian_avatar.jpg" },
+    "time": "2025-03-20 13:15",
+    "content": "Bought a cup of hot milk tea on my way home from work.\nWhen stressed, you really do need something sweet.",
+    "likes": 24,
+    "comments": 2
+  }
+]

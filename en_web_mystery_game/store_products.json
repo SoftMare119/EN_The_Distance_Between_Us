@@ -1,0 +1,32 @@
+[
+  {
+    "name": "IPhone 15 Pro",
+    "price": "7999",
+    "emoji": "📱"
+  },
+  {
+    "name": "Samsung Galaxy S24",
+    "price": "6999",
+    "emoji": "📱"
+  },
+  {
+    "name": "Xiaomi 14 Ultra",
+    "price": "5499",
+    "emoji": "📱"
+  },
+  {
+    "name": "Wireless Earbuds",
+    "price": "899",
+    "emoji": "🎧"
+  },
+  {
+    "name": "Charger Set",
+    "price": "199",
+    "emoji": "🔌"
+  },
+  {
+    "name": "Screen Protector",
+    "price": "29",
+    "emoji": "🛡️"
+  }
+]
