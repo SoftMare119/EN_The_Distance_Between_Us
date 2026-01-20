@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>管理员后台 - 订货管理</title>
+  <title>Admin Panel - Order Management</title>
   <style>
     * {
       margin: 0;
@@ -520,86 +520,86 @@
 <body>
   <header>
     <div class="header-content">
-      <div class="logo">[ADMIN SYSTEM] 管理员后台</div>
+      <div class="logo">[ADMIN SYSTEM]</div>
       <div class="header-actions">
-        <button class="logout-btn" onclick="logout()">退出登录</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
     </div>
   </header>
 
   <main>
-    <h1 class="page-title">订货管理面板</h1>
-    <p class="page-subtitle">实时查看和管理所有客户订货信息</p>
+    <h1 class="page-title">Order Management Panel</h1>
+    <p class="page-subtitle">View and manage all customer order information in real-time</p>
 
-    <!-- 统计卡片 -->
+    <!-- Statistics Cards -->
     <div class="dashboard-grid">
       <div class="stat-card">
-        <h3>总订货留言</h3>
+        <h3>Total Order Messages</h3>
         <div class="value">6</div>
       </div>
       <div class="stat-card">
-        <h3>今日新留言</h3>
+        <h3>New Today</h3>
         <div class="value">2</div>
       </div>
       <div class="stat-card">
-        <h3>已处理</h3>
+        <h3>Processed</h3>
         <div class="value">5</div>
       </div>
       <div class="stat-card">
-        <h3>待处理</h3>
+        <h3>Pending</h3>
         <div class="value">1</div>
       </div>
     </div>
 
-    <!-- 管理员须知 -->
+    <!-- Administrator Guidelines -->
     <div class="section">
-      <h2 class="section-title">管理员须知</h2>
+      <h2 class="section-title">Administrator Guidelines</h2>
       <div class="faq-section" id="adminGuidelinesContainer"></div>
     </div>
   </main>
 
-  <!-- 详情模态框 -->
+  <!-- Detail Modal -->
   <div id="detailModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">订货详情</div>
+      <div class="modal-header">Order Details</div>
       <div class="modal-body" id="detailContent"></div>
       <div class="modal-footer">
-        <button class="btn-close" onclick="closeDetailModal()">关闭</button>
+        <button class="btn-close" onclick="closeDetailModal()">Close</button>
       </div>
     </div>
   </div>
 
   <script>
-    // 管理员须知的内容配置 - 可自定义
+    // Administrator Guidelines Content - Customizable
     const adminGuidelines = [
       {
-        title: '系统访问权限',
-        content: '仅授权管理员可访问本系统。禁止分享登录密码或访问链接给任何第三方。所有操作均被记录并可追溯。'
+        title: 'System Access Permissions',
+        content: 'Only authorized administrators may access this system. Sharing login credentials or access links with any third party is prohibited. All operations are logged and traceable.'
       },
       {
-        title: '数据保护要求',
-        content: '客户信息属于机密数据。禁止复制、下载或通过任何非官方渠道泄露客户名单、电话号码或订货内容。'
+        title: 'Data Protection Requirements',
+        content: 'Customer information is confidential data. Copying, downloading, or leaking customer lists, phone numbers, or order content through any unofficial channels is prohibited.'
       },
       {
-        title: '订货处理流程',
-        content: '接收订货后需在1小时内确认。记录所有联系沟通详情。'
+        title: 'Order Processing Workflow',
+        content: 'Orders must be confirmed within 1 hour of receipt. All contact communication details must be recorded.'
       },
       {
-        title: '系统安全规则',
-        content: '不在公共网络使用本系统。禁止使用共享设备访问。发现异常活动应立即通知系统管理员。'
+        title: 'System Security Rules',
+        content: 'Do not use this system on public networks. Access from shared devices is prohibited. Report any unusual activity to the system administrator immediately.'
       },
       {
-        title: '常见问题解答',
-        content: '如需帮助，请查阅操作规范，并按规则执行。'
+        title: 'Frequently Asked Questions',
+        content: 'For assistance, please refer to the operation procedures and follow the rules.'
       }
     ];
 
-    // 初始化
+    // Initialize
     function initDashboard() {
       initAdminGuidelines();
     }
 
-    // 初始化管理员须知
+    // Initialize administrator guidelines
     function initAdminGuidelines() {
       const container = document.getElementById('adminGuidelinesContainer');
       let html = '';
@@ -619,19 +619,19 @@
       container.innerHTML = html;
     }
 
-    // 切换管理员须知的展开/折叠
+    // Toggle expand/collapse of administrator guidelines
     function toggleGuideline(element) {
       element.classList.toggle('active');
     }
 
-    // 退出登录
+    // Logout
     function logout() {
-      if (confirm('确定要退出管理员登录吗？')) {
+      if (confirm('Are you sure you want to log out of the admin panel?')) {
         window.location.href = 'order_website.html';
       }
     }
 
-    // 页面加载时初始化
+    // Initialize on page load
     document.addEventListener('DOMContentLoaded', initDashboard);
   </script>
 </body>

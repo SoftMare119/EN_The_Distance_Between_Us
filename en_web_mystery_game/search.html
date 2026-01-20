@@ -1,10 +1,10 @@
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>搜索 · 游戏线索</title>
+	<title>Search · Game Clues</title>
 	<style>
 		:root{--bg:#fff;--page-bg:#f6f7fb;--accent:#1a73e8;--muted:#6b7280}
 		html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Helvetica Neue',Arial}
@@ -46,12 +46,12 @@
 	<div class="wrap">
 		<header class="search-header" role="banner">
 			<div class="logo">Hoogle</div>
-			<div class="sub">搜索关键词</div>
+			<div class="sub">Search Keywords</div>
 
 			<div class="search-box">
 				<div class="search-field" role="search">
-					<input id="q" type="search" placeholder="请输入关键词" aria-label="搜索关键词">
-					<button id="go">搜索</button>
+					<input id="q" type="search" placeholder="Enter keywords" aria-label="Search keywords">
+					<button id="go">Search</button>
 				</div>
 			</div>
 		</header>
@@ -59,31 +59,31 @@
 		<div class="results" id="results" aria-live="polite"></div>
 
 		<div class="police-link">
-			<a href="police.html">我已掌握足够线索</a>
+			<a href="police.html">I have enough clues</a>
 		</div>
 	</div>
 
 	<script>
 		// data: each item has keywords (array), title, snippet, href, displayUrl
 		const data = [
-			{keywords:['陈念','念念'], title:'陈念的聊天记录（1）', snippet:'与陈念的早期对话记录，记录了日常交流的点滴。', href:'chat_history1.html', displayUrl:'chat_history1.html'},
-			{keywords:['陈念','念念'], title:'陈念的聊天记录（3）', snippet:'最近的聊天记录，可能包含重要线索。', href:'chat_history3.html', displayUrl:'chat_history3.html'},
-			{keywords:['今心'], title:'今心的个人博客', snippet:'今心（陈念）的WeBlog，记录生活点滴和心情。', href:'chen_nian_weblog.html', displayUrl:'chen_nian_weblog.html'},
-			{keywords:['草莓'], title:'陈念的聊天记录（2）', snippet:'聊天记录中提到草莓挞的相关内容。', href:'chat_history2.html', displayUrl:'chat_history2.html'},
-			{keywords:['许国成'], title:'清岚市联信通讯器材经营部', snippet:'许国成相关的商户信息和背景资料。', href:'store_info.html', displayUrl:'store_info.html'},
-			{keywords:['清岚市联信通讯器材经营部（个体工商户）','清岚市联信通讯器材经营部','店铺名清岚市联信通讯','联信通讯'], title:'清岚市联信通讯器材经营部官网', snippet:'联信通讯器材经营部的官方网站，提供各类通讯设备。', href:'store_website.html', displayUrl:'store_website.html'},
-			{keywords:['操作规范'], title:'系统操作规范', snippet:'内部操作规范文档，包含详细的管理流程说明。', href:'operation.html', displayUrl:'operation.html'},
-			{keywords:['货品对照指南'], title:'货品对照指南', snippet:'产品编号与规格的详细对照说明文档。', href:'product_guide.html', displayUrl:'product_guide.html'},
-			{keywords:['进口三星sg-160','sg-160'], title:'进口三星SG-160产品信息', snippet:'SG-160型号的详细产品规格和参数信息。', href:'product_info3.html', displayUrl:'product_info3.html'},
-			{keywords:['nx03800635'], title:'历史交易', snippet:'订单编号NX03800635的详细交易历史记录。', href:'order_history.html', displayUrl:'order_history.html'},
-			{keywords:['zhouli'], title:'论坛讨论', snippet:'zhouli在二手手机交易论坛发布的帖子。', href:'forum.html', displayUrl:'forum.html'},
-			{keywords:['zhouli'], title:'zhouli的个人博客', snippet:'zhouli的WeBlog，记录个人生活和见闻。', href:'zhouli_weblog.html', displayUrl:'zhouli_weblog.html'},
-			{keywords:['二手手机同好会'], title:'二手手机交易群', snippet:'关于二手手机同好会的论坛讨论帖。', href:'post_discussion.html', displayUrl:'post_discussion.html'},
-			{keywords:['北桥','北桥市'], title:'北桥市城市介绍', snippet:'北桥市的详细介绍，包括城市概况、产业发展等信息。', href:'beiqiao.html', displayUrl:'beiqiao.html'},
-			{keywords:['北桥','北桥市'], title:'北桥市安河村民生新闻', snippet:'关于北桥市安河村发展现状的新闻报道。', href:'beiqiao_news.html', displayUrl:'beiqiao_news.html'},
-			{keywords:['北桥仓储','北桥物流','北桥物流仓储','北桥市物流仓储','北桥市仓储','北桥市物流'], title:'北桥物流仓储搜索结果', snippet:'北桥市物流仓储相关企业和地址信息。', href:'warehouse_location.html', displayUrl:'warehouse_location.html'},
-			{keywords:['逆转的法庭'], title:'???', snippet:'异议あり！', href:'easter_egg_phoenix_wright.html', displayUrl:'easter_egg_phoenix_wright.html'},
-			{keywords:['常沙市','常沙'], title:'???', snippet:'You found it!', href:'easter_egg_changsha.html', displayUrl:'easter_egg_changsha.html'},
+			{keywords:['Nina','Nina Chen'], title:'Chat History(1)', snippet:'Early conversation records with Chen Nian, documenting daily exchanges.', href:'chat_history1.html', displayUrl:'chat_history1.html'},
+			{keywords:['Nina','Nina Chen'], title:'Chat History(3)', snippet:'Recent chat records that may contain important clues.', href:'chat_history3.html', displayUrl:'chat_history3.html'},
+			{keywords:['heyitsnina'], title:'heyitsnina WeBlog', snippet:'Jinxin (Chen Nian)\'s WeBlog, recording daily life and thoughts.', href:'chen_nian_weblog.html', displayUrl:'chen_nian_weblog.html'},
+			{keywords:['strawberry','Strawberry'], title:'Chat History(2)', snippet:'Chat records mentioning strawberry tarts.', href:'chat_history2.html', displayUrl:'chat_history2.html'},
+			{keywords:['Jason Wu'], title:'PrimeLink Telecom LTD', snippet:'Merchant information and background related to Jason Wu.', href:'store_info.html', displayUrl:'store_info.html'},
+			{keywords:['PrimeLink Telecom LTD'], title:'PrimeLink Telecom Official Website', snippet:'Official website of PrimeLink Telecom, providing various communication devices.', href:'store_website.html', displayUrl:'store_website.html'},
+			{keywords:['operation procedures'], title:'System Operation Procedures', snippet:'Internal operation procedures document with detailed management process instructions.', href:'operation.html', displayUrl:'operation.html'},
+			{keywords:['product guide'], title:'Product Reference Guide', snippet:'Detailed reference documentation for product codes and specifications.', href:'product_guide.html', displayUrl:'product_guide.html'},
+			{keywords:['Imported Samsung sg-160','sg-160'], title:'Imported Samsung SG-160 Product Information', snippet:'Detailed product specifications and parameters for the SG-160 model.', href:'product_info3.html', displayUrl:'product_info3.html'},
+			{keywords:['nx03800635'], title:'Transaction History', snippet:'Detailed transaction history for order number NX03800635.', href:'order_history.html', displayUrl:'order_history.html'},
+			{keywords:['zhouli'], title:'Forum Discussion', snippet:'Posts by zhouli on the second-hand mobile phone trading forum.', href:'forum.html', displayUrl:'forum.html'},
+			{keywords:['zhouli'], title:'zhouli\'s Personal Blog', snippet:'zhouli\'s WeBlog, recording personal life and experiences.', href:'zhouli_weblog.html', displayUrl:'zhouli_weblog.html'},
+			{keywords:['Second-hand Phone Enthusiasts'], title:'Second-hand Phone Trading Group', snippet:'Forum discussion post about the Second-hand Phone Enthusiasts group.', href:'post_discussion.html', displayUrl:'post_discussion.html'},
+			{keywords:['Beiqiao','Beiqiao City'], title:'Beiqiao City Introduction', snippet:'Detailed introduction to Beiqiao City, including city overview and industrial development.', href:'beiqiao.html', displayUrl:'beiqiao.html'},
+			{keywords:['Beiqiao','Beiqiao City'], title:'Beiqiao City Anhe Village News', snippet:'News report about the development status of Anhe Village in Beiqiao City.', href:'beiqiao_news.html', displayUrl:'beiqiao_news.html'},
+			{keywords:['Beiqiao storage','Beiqiao logistics'], title:'Beiqiao Logistics Storage Search Results', snippet:'Information about logistics and storage companies and addresses in Beiqiao City.', href:'warehouse_location.html', displayUrl:'warehouse_location.html'},
+			{keywords:['Turnabout Trial','Phoenix Wright'], title:'???', snippet:'Objection!', href:'easter_egg_phoenix_wright.html', displayUrl:'easter_egg_phoenix_wright.html'},
+			{keywords:['Changsha City','Changsha'], title:'???', snippet:'You found it!', href:'easter_egg_changsha.html', displayUrl:'easter_egg_changsha.html'},
 		];
 
 		const input = document.getElementById('q');
@@ -96,12 +96,12 @@
 		function renderResults(items, query){
 			results.innerHTML = '';
 			if(!items || items.length===0){
-				results.innerHTML = `<div class="noresult"><strong>未找到与 “${escapeHtml(query)}” 相关的结果。</strong><div style="margin-top:10px;color:var(--muted)">请检查拼写或尝试其他关键词。</div></div>`;
+				results.innerHTML = `<div class="noresult"><strong>No results found for "${escapeHtml(query)}".</strong><div style="margin-top:10px;color:var(--muted)">Please check your spelling or try different keywords.</div></div>`;
 				return;
 			}
 			const meta = document.createElement('div');
 			meta.className = 'meta';
-			meta.textContent = `${items.length} 条结果`; 
+			meta.textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
 			results.appendChild(meta);
 
 			items.forEach(it=>{
@@ -120,7 +120,7 @@
 
 		function searchOnce(){
 			const raw = sanitize(input.value);
-			if(!raw){ results.innerHTML = '<div class="noresult">请输入关键词后搜索。</div>'; return; }
+			if(!raw){ results.innerHTML = '<div class="noresult">Please enter keywords to search.</div>'; return; }
 			const q = raw.toLowerCase();
 
 			// exact match only
@@ -133,7 +133,7 @@
 		input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); searchOnce(); } });
 
 		// show empty state on load
-		results.innerHTML = '<div class="noresult">输入关键词并搜索，或浏览页面以获取线索。</div>';
+		results.innerHTML = '<div class="noresult">Enter keywords to search, or browse the page for clues.</div>';
 	</script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>无结果 · 搜索</title>
+  <title>No Results · Search</title>
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;background:#f6f7fb;color:#111;display:flex;align-items:center;justify-content:center;height:100vh}
     .box{background:#fff;padding:28px;border-radius:10px;max-width:720px;width:92%;box-shadow:0 10px 30px rgba(15,20,40,0.06)}
@@ -15,10 +15,10 @@
 </head>
 <body>
   <div class="box">
-    <h1>未找到相关结果</h1>
-    <p id="desc">我们未能找到与您搜索的关键词相关的页面。</p>
+    <h1>No Results Found</h1>
+    <p id="desc">We could not find any pages related to your search keywords.</p>
     <p>
-      <a href="search.html">返回搜索页面</a>
+      <a href="search.html">Return to Search Page</a>
     </p>
   </div>
 
@@ -28,7 +28,7 @@
     const q = params.get('q');
     if(q){
       const el = document.getElementById('desc');
-      el.textContent = `未找到与 "${q}" 相关的页面。请尝试其他关键词。`;
+      el.textContent = `No pages found related to "${q}". Please try other keywords.`;
     }
   </script>
 </body>
