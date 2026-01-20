@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>zhouli的WeBlog</title>
+  <title>Marcus' WeBlog</title>
   <style>
     :root{--bg:#f2f4f7;--card:#fff;--accent:#e9423a;--muted:#6b7280}
     html,body{height:100%;margin:0;font-family:system-ui,-apple-system,'Helvetica Neue',Arial;background:var(--bg);color:#111}
@@ -47,22 +47,22 @@
   <div class="wrap">
     <header class="site">
       <div class="brand">
-        <div class="logo">周</div>
+        <div class="logo">M</div>
         <div>
-          <h1>zhouli的WeBlog</h1>
-          <div class="time muted">记录生活中的每个瞬间</div>
+          <h1>Marcus' WeBlog</h1>
+          <div class="time muted">Recording every moment of life</div>
         </div>
       </div>
       <div class="actions">
-        <a href="javascript:history.back()">返回</a>
+        <a href="javascript:history.back()">Back</a>
       </div>
     </header>
 
-    <section class="compose" aria-label="发布草稿">
-      <textarea placeholder="分享点什么..." disabled>今天有什么有趣的事吗？</textarea>
+    <section class="compose" aria-label="Post draft">
+      <textarea placeholder="Share something..." disabled>Anything interesting today?</textarea>
       <div class="meta">
         <small class="time"></small>
-        <button class="btn" disabled>发布</button>
+        <button class="btn" disabled>Post</button>
       </div>
     </section>
 
@@ -70,7 +70,7 @@
       <!-- posts injected here -->
     </main>
 
-    <button id="loadMore" class="load-more">加载更多</button>
+    <button id="loadMore" class="load-more">Load More</button>
   </div>
 
   <script>
@@ -82,17 +82,22 @@
     // Utility to format time
     function timeAgo(ts){
       const diff = Math.floor((Date.now() - new Date(ts))/1000);
-      if(diff < 60) return diff + ' 秒前';
-      if(diff < 3600) return Math.floor(diff/60) + ' 分钟前';
-      if(diff < 86400) return Math.floor(diff/3600) + ' 小时前';
-      return Math.floor(diff/86400) + ' 天前';
+      if(diff < 60) return diff + ' seconds ago';
+      if(diff < 3600) return Math.floor(diff/60) + ' minutes ago';
+      if(diff < 86400) return Math.floor(diff/3600) + ' hours ago';
+      return Math.floor(diff/86400) + ' days ago';
     }
 
-    // Format as concrete date/time
+    // Format as concrete date/time (static UTC time)
     function formatDate(ts){
       try{
         const d = new Date(ts);
-        return d.toLocaleString('zh-CN', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+        const year = d.getUTCFullYear();
+        const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+        const day = String(d.getUTCDate()).padStart(2, '0');
+        const hour = String(d.getUTCHours()).padStart(2, '0');
+        const minute = String(d.getUTCMinutes()).padStart(2, '0');
+        return `${month}/${day}/${year}, ${hour}:${minute}`;
       }catch(e){
         return ts;
       }
@@ -106,13 +111,13 @@
         location_html = `<div class="location">📍 ${escapeHtml(p.location)}</div>`;
       }
       el.innerHTML = `
-        <div class="avatar">${p.author.avatar || '周'}</div>
+        <div class="avatar">${p.author.avatar || 'M'}</div>
         <div class="post-body">
           <div class="post-head"><div class="author">${escapeHtml(p.author.name)}</div><div class="time">· ${formatDate(p.time)}</div></div>
           <div class="content">${escapeHtml(p.content)}</div>
           ${location_html}
           ${p.images && p.images.length? `<div class="images">${p.images.map(u=>`<img src="${u}" alt="image">`).join('')}</div>` : ''}
-          <div class="post-actions">❤ ${p.likes || 0}  评论 ${p.comments || 0}  分享</div>
+          <div class="post-actions">❤ ${p.likes || 0}  Comments ${p.comments || 0}  Share</div>
         </div>
       `;
       return el;
@@ -139,13 +144,13 @@
       allPosts = data;
       if(!Array.isArray(allPosts)) allPosts = [];
       if(allPosts.length === 0){
-        document.getElementById('feed').innerHTML = '<p style="color:var(--muted)">当前没有文章。请编辑 zhoulm_weblog.json 添加你的帖子。</p>';
+        document.getElementById('feed').innerHTML = '<p style="color:var(--muted)">No posts currently. Please edit zhoulm_weblog.json to add your posts.</p>';
         document.getElementById('loadMore').style.display = 'none';
         return;
       }
       appendNextPage();
     }).catch(err=>{
-      document.getElementById('feed').innerHTML = '<p style="color:var(--muted)">加载文章失败，请确保 zhoulm_weblog.json 存在且格式正确。</p>';
+      document.getElementById('feed').innerHTML = '<p style="color:var(--muted)">Failed to load posts. Please ensure zhoulm_weblog.json exists and is properly formatted.</p>';
       document.getElementById('loadMore').style.display = 'none';
       console.error(err);
     });
