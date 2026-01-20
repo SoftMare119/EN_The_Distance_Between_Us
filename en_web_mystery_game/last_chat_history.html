@@ -76,18 +76,18 @@
     }
 
     function render(){
-      container.textContent = '';
+      container.innerHTML = '';
       messages.forEach(m=>{
         const el = document.createElement('div');
         el.className = 'msg ' + (m.who==='me'? 'me' : 'you');
         const avatarHtml = m.who==='me' ? '' : '<div class="avatar-sm"><img src="pics/chen_nian_avatar.jpg" alt="Nina Chen"></div>';
         const bubble = document.createElement('div');
         bubble.className = 'bubble';
-        bubble.textContent = `<div>${escapeHtml(m.text || '')}</div>` + (m.images? m.images.map(u=>`<img src="${u}" alt="image">`).join('') : '') + `<span class="time">${formatDate(m.time)}</span>`;
+        bubble.innerHTML = `<div>${escapeHtml(m.text || '')}</div>` + (m.images? m.images.map(u=>`<img src="${u}" alt="image">`).join('') : '') + `<span class="time">${formatDate(m.time)}</span>`;
         if(m.who==='me'){ 
           el.appendChild(bubble);
         } else {
-          el.textContent = avatarHtml;
+          el.innerHTML = avatarHtml;
           el.appendChild(bubble);
         }
         container.appendChild(el);
