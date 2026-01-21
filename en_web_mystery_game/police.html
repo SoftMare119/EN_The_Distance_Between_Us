@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>报警</title>
+  <title>Call the Police</title>
   <style>
     * {
       margin: 0;
@@ -192,35 +192,35 @@
 <body>
   <div class="container">
     <div class="content">
-      <h1>报警</h1>
+      <h1>Call the Police</h1>
 
-      <p class="emphasis">你已经掌握了足够的证据。</p>
+      <p class="emphasis">You have gathered enough evidence.</p>
 
-      <p>是时候做出决定了。</p>
-      <p>你拨通了报警电话，警方需要你提供确切的地址信息。</p>
+      <p>It's time to make a decision.</p>
+      <p>You dialed the number, and the police need you to provide the exact address information.</p>
 
       <div class="form-section">
         <form id="policeForm">
           <div class="form-group">
-            <label for="location">请输入陈念所在地：</label>
+            <label for="location">Please enter Nina Chen's location:</label>
             <input 
               type="text" 
               id="location" 
               name="location" 
-              placeholder="输入详细地址..." 
+              placeholder="Enter detailed address..." 
               autocomplete="off"
               required
             >
-            <div class="hint">请输入完整的详细地址</div>
-            <div class="error-message" id="locationError">地址不正确，请仔细核对你的线索</div>
+            <div class="hint">Please enter the complete detailed address</div>
+            <div class="error-message" id="locationError">The address is incorrect, please review your clues</div>
           </div>
 
-          <button type="submit" class="submit-btn">提交</button>
+          <button type="submit" class="submit-btn">Submit</button>
         </form>
       </div>
 
       <div class="back-link">
-        <a href="javascript:history.back()">返回</a>
+        <a href="javascript:history.back()">Back</a>
       </div>
     </div>
   </div>
@@ -230,14 +230,14 @@
     const locationInput = document.getElementById('location');
     const errorMessage = document.getElementById('locationError');
 
-    // 正确答案（去除所有空格进行比较）
-    const correctLocation = '海州市青梧区槐安村217号';
+    // Correct answer (remove all spaces for comparison)
+    const correctLocation = '217 Stonewatch Cottage, Highmoor Edge, Northfell';
 
-    // 第二个线索的正确答案
-    const correctClue = '北桥市旧港区临水街17号附2号';
+    // Second clue's correct answer
+    const correctClue = 'Warehouse B, Greyline Industrial Estate, Boundary Way, Willowford';
 
     function normalizeText(text) {
-      // 移除所有空格、全角空格和特殊字符，统一格式
+      // Remove all spaces, full-width spaces, and special characters, unify format
       return text.replace(/\s+/g, '').toLowerCase();
     }
 
@@ -249,35 +249,35 @@
       const normalizedCorrect = normalizeText(correctLocation);
 
       if (normalizedInput === normalizedCorrect) {
-        // 地址正确，询问是否有其他线索
-        const hasMoreClues = confirm('你是否还有其他线索？');
+        // Address is correct, ask if there are more clues
+        const hasMoreClues = confirm('Do you have any other clues?');
         
         if (hasMoreClues) {
-          // 玩家选择"是"，弹出输入框要求输入线索
-          const clueInput = prompt('请输入线索：');
+          // Player chooses "Yes", prompt for input to enter clue
+          const clueInput = prompt('Please enter the clue:');
           
           if (clueInput) {
             const normalizedClue = normalizeText(clueInput);
             const normalizedCorrectClue = normalizeText(correctClue);
             
             if (normalizedClue === normalizedCorrectClue) {
-              // 线索正确，跳转到Good End
+              // Clue is correct, redirect to Good End
               window.location.href = 'good_end1.html';
             } else {
-              // 线索不正确，跳转到True End
-              alert('警方已前往你提供的第一个地址。');
+              // Clue is incorrect, redirect to True End
+              alert('The police are heading to the first address you provided.');
               window.location.href = 'true_end.html';
             }
           } else {
-            // 用户取消输入或输入为空，跳转到True End
+            // User canceled input or input is empty, redirect to True End
             window.location.href = 'true_end.html';
           }
         } else {
-          // 玩家选择"否"，跳转到True End
+          // Player chooses "No", redirect to True End
           window.location.href = 'true_end.html';
         }
       } else {
-        // 地址错误，显示错误提示
+        // Address is incorrect, show error message
         errorMessage.style.display = 'block';
         locationInput.style.borderColor = '#ff4444';
         
@@ -288,7 +288,7 @@
       }
     });
 
-    // 清除错误提示
+    // Clear error message
     locationInput.addEventListener('input', function() {
       errorMessage.style.display = 'none';
       locationInput.style.borderColor = '#444';
