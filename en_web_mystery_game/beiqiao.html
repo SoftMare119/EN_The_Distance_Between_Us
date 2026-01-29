@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Willowford City - City Introduction</title>
+  <title>Willowford - Mikipedia</title>
   <style>
     * {
       margin: 0;
@@ -11,281 +11,383 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --primary: #2563eb;
-      --bg: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --section-bg: #f9fafb;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Linux Libertine', Georgia, Times, serif;
+      background-color: #f8f9fa;
+      color: #202122;
+      line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Header */
+    .wiki-header {
+      background: #fff;
+      border-bottom: 1px solid #a2a9b1;
+      padding: 10px 20px;
+      font-family: sans-serif;
+      font-size: 13px;
     }
 
-    header h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    header .subtitle {
-      font-size: 20px;
-      opacity: 0.95;
-      font-weight: 300;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .intro-section {
-      background: var(--section-bg);
-      padding: 40px;
-      border-radius: 12px;
-      margin-bottom: 40px;
-      border-left: 4px solid var(--primary);
-    }
-
-    .intro-section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-
-    .intro-section p {
-      font-size: 16px;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin: 40px 0;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-    }
-
-    .feature-card .icon {
-      font-size: 40px;
-      margin-bottom: 16px;
-    }
-
-    .feature-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--primary);
-    }
-
-    .feature-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .stats-section {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 50px 40px;
-      border-radius: 12px;
-      margin: 40px 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-item .number {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .stat-item .label {
-      font-size: 16px;
-      opacity: 0.9;
-    }
-
-    .districts-section {
-      margin: 40px 0;
-    }
-
-    .districts-section h2 {
-      font-size: 32px;
-      margin-bottom: 24px;
-      color: var(--primary);
-      text-align: center;
-    }
-
-    .districts {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .district {
-      background: var(--section-bg);
-      padding: 24px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .district h4 {
-      font-size: 18px;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-
-    .district p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .back-link {
-      text-align: center;
-      margin-top: 50px;
-      padding-bottom: 40px;
-    }
-
-    .back-link a {
-      display: inline-block;
-      padding: 12px 32px;
-      background: var(--primary);
-      color: white;
+    .wiki-logo {
+      font-weight: bold;
+      color: #000;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: opacity 0.3s;
+      font-size: 16px;
     }
 
-    .back-link a:hover {
-      opacity: 0.9;
+    /* Main Container */
+    .wiki-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      background: #fff;
+      position: relative;
+    }
+
+    /* Sidebar */
+    .wiki-sidebar {
+      width: 240px;
+      padding: 20px 15px;
+      background: #f8f9fa;
+      border-right: 1px solid #a2a9b1;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .toc {
+      background: #f8f9fa;
+      border: 1px solid #a2a9b1;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    .toc-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin-left: 15px;
+    }
+
+    .toc li {
+      margin: 5px 0;
+    }
+
+    .toc a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    .wiki-content {
+      flex: 1;
+      padding: 20px 30px;
+      max-width: 900px;
+    }
+
+    .wiki-title {
+      font-family: 'Linux Libertine', Georgia, Times, serif;
+      font-size: 32px;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .wiki-subtitle {
+      font-size: 13px;
+      color: #54595d;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    /* Infobox */
+    .infobox {
+      float: right;
+      margin: 0 0 15px 15px;
+      width: 280px;
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+      font-size: 13px;
+    }
+
+    .infobox-title {
+      background: #cfe3f5;
+      padding: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .infobox-image {
+      text-align: center;
+      padding: 10px;
+      background: #fff;
+    }
+
+    .infobox-row {
+      display: flex;
+      border-top: 1px solid #a2a9b1;
+    }
+
+    .infobox-label {
+      font-weight: bold;
+      padding: 6px 8px;
+      width: 40%;
+      background: #f8f9fa;
+    }
+
+    .infobox-value {
+      padding: 6px 8px;
+      width: 60%;
+      background: #fff;
+    }
+
+    /* Content Paragraphs */
+    p {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    .lead {
+      font-size: 14px;
+    }
+
+    h2 {
+      font-family: 'Linux Libertine', Georgia, Times, serif;
+      font-size: 24px;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: 'Linux Libertine', Georgia, Times, serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #0b0080;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Lists */
+    ul {
+      margin-left: 25px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* Table */
+    .wiki-table {
+      border-collapse: collapse;
+      margin: 15px 0;
+      width: 100%;
+      font-size: 13px;
+    }
+
+    .wiki-table th {
+      background: #eaecf0;
+      padding: 8px;
+      border: 1px solid #a2a9b1;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .wiki-table td {
+      padding: 8px;
+      border: 1px solid #a2a9b1;
+    }
+
+    /* Back Link */
+    .wiki-footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #a2a9b1;
+      text-align: center;
+    }
+
+    .wiki-footer a {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #f8f9fa;
+      border: 1px solid #a2a9b1;
+      border-radius: 2px;
+      font-size: 13px;
+      color: #0645ad;
+    }
+
+    .wiki-footer a:hover {
+      background: #fff;
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 36px;
+      .wiki-sidebar {
+        display: none;
       }
 
-      .features {
-        grid-template-columns: 1fr;
+      .infobox {
+        float: none;
+        width: 100%;
+        margin: 0 0 15px 0;
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .wiki-content {
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Willowford</h1>
-    <p class="subtitle">City of Vitality · Capital of the Future</p>
-  </header>
+  <div class="wiki-header">
+    <span class="wiki-logo">Mikipedia</span>
+  </div>
 
-  <div class="container">
-    <div class="intro-section">
-      <h2>City Overview</h2>
-      <p>Willowford is located in the eastern coastal region and is a vibrant modern city. With convenient transportation, a prosperous economy, and rich cultural heritage, it serves as an important regional economic, cultural, and technological center.</p>
+  <div class="wiki-container">
+    <!-- Sidebar -->
+    <div class="wiki-sidebar">
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ul>
+          <li><a href="#overview">1 Overview</a></li>
+          <li><a href="#statistics">2 Statistics</a></li>
+          <li><a href="#economy">3 Economy and Industry</a></li>
+          <li><a href="#transport">4 Transportation</a></li>
+          <li><a href="#education">5 Education</a></li>
+          <li><a href="#healthcare">6 Healthcare</a></li>
+          <li><a href="#environment">7 Environment</a></li>
+          <li><a href="#business">8 Business Environment</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wiki-content">
+      <h1 class="wiki-title">Willowford</h1>
+      <p class="wiki-subtitle">From Mikipedia, the free encyclopedia</p>
+
+      <!-- Infobox -->
+      <div class="infobox">
+        <div class="infobox-title">Willowford</div>
+        <div class="infobox-image">
+          <img src="pics/willowford.jpg" alt="Willowford cityscape" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div class="infobox-row">
+          <div class="infobox-label">Country</div>
+          <div class="infobox-value">United Kingdom</div>
+        </div>
+        <div class="infobox-row">
+          <div class="infobox-label">Region</div>
+          <div class="infobox-value">Eastern Coastal</div>
+        </div>
+        <div class="infobox-row">
+          <div class="infobox-label">Population</div>
+          <div class="infobox-value">2,800,000</div>
+        </div>
+        <div class="infobox-row">
+          <div class="infobox-label">Area</div>
+          <div class="infobox-value">1,850 km²</div>
+        </div>
+        <div class="infobox-row">
+          <div class="infobox-label">GDP</div>
+          <div class="infobox-value">£520 billion</div>
+        </div>
+        <div class="infobox-row">
+          <div class="infobox-label">Green Coverage</div>
+          <div class="infobox-value">42%</div>
+        </div>
+      </div>
+
+      <p class="lead"><strong>Willowford</strong> is a vibrant modern city located in the eastern coastal region of the United Kingdom. With convenient transportation, a prosperous economy, and rich cultural heritage, it serves as an important regional economic, cultural, and technological center.</p>
+
+      <h2 id="overview">Overview</h2>
+      <p>Willowford is characterized by its strategic location and comprehensive infrastructure. The city has experienced significant growth in recent years, becoming a hub for innovation and economic development in the region.</p>
+
       <p>In recent years, Willowford has actively promoted urban construction and industrial upgrading, creating multiple modern industrial parks that have attracted numerous excellent enterprises and talented individuals. The city's infrastructure is well-developed, the public service system is comprehensive, and residents' quality of life continues to improve.</p>
+
       <p>Willowford boasts beautiful natural surroundings and pleasant climate conditions, with four distinct seasons and fresh air. The urban green coverage rate reaches 42%, earning it the title of "Garden City" and making it an ideal place for work and living.</p>
-    </div>
 
-    <div class="stats-section">
-      <h2 style="text-align: center; margin-bottom: 10px;">City Statistics</h2>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="number">2.8M</div>
-          <div class="label">Permanent Population</div>
-        </div>
-        <div class="stat-item">
-          <div class="number">520B</div>
-          <div class="label">GDP (GBP)</div>
-        </div>
-        <div class="stat-item">
-          <div class="number">1,850km²</div>
-          <div class="label">Urban Area</div>
-        </div>
-        <div class="stat-item">
-          <div class="number">42%</div>
-          <div class="label">Green Coverage</div>
-        </div>
-      </div>
-    </div>
+      <h2 id="statistics">Statistics</h2>
+      <table class="wiki-table">
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Permanent Population</td>
+          <td>2.8 million</td>
+        </tr>
+        <tr>
+          <td>GDP</td>
+          <td>£520 billion</td>
+        </tr>
+        <tr>
+          <td>Urban Area</td>
+          <td>1,850 km²</td>
+        </tr>
+        <tr>
+          <td>Green Coverage</td>
+          <td>42%</td>
+        </tr>
+      </table>
 
-    <h2 style="font-size: 32px; margin-bottom: 24px; color: var(--primary); text-align: center;">City Features</h2>
-    <div class="features">
-      <div class="feature-card">
-        <div class="icon">🏭</div>
-        <h3>Developed Industries</h3>
-        <p>Features a comprehensive industrial system with rapidly developing clusters in logistics and warehousing, smart manufacturing, and electronic information, making it an important regional manufacturing base.</p>
-      </div>
+      <h2 id="economy">Economy and Industry</h2>
+      <p>Willowford features a comprehensive industrial system with rapidly developing clusters in <a href="#">logistics and warehousing</a>, <a href="#">smart manufacturing</a>, and <a href="#">electronic information</a>, making it an important regional manufacturing base. The city has established itself as a key player in the national economy.</p>
 
-      <div class="feature-card">
-        <div class="icon">🚄</div>
-        <h3>Convenient Transportation</h3>
-        <p>High-speed rail and highways extend in all directions, with only a 1-hour drive to the provincial capital. The city's underground and bus networks are well-developed, making travel very convenient.</p>
-      </div>
+      <h2 id="transport">Transportation</h2>
+      <p>The city benefits from excellent transportation infrastructure. High-speed rail and highways extend in all directions, with only a 1-hour drive to the provincial capital. The city's underground and bus networks are well-developed, making travel very convenient for both residents and visitors.</p>
 
-      <div class="feature-card">
-        <div class="icon">🎓</div>
-        <h3>Educational Resources</h3>
-        <p>Home to multiple prestigious universities and research institutions, with excellent quality in basic education and a comprehensive talent cultivation system that provides intellectual support for city development.</p>
-      </div>
+      <h2 id="education">Education</h2>
+      <p>Willowford is home to multiple prestigious universities and research institutions, with excellent quality in basic education and a comprehensive talent cultivation system that provides intellectual support for city development. The educational infrastructure includes:</p>
+      <ul>
+        <li>Several top-tier universities with international recognition</li>
+        <li>Advanced research facilities and innovation centers</li>
+        <li>Comprehensive primary and secondary education system</li>
+        <li>Vocational training programs aligned with industry needs</li>
+      </ul>
 
-      <div class="feature-card">
-        <div class="icon">🏥</div>
-        <h3>Comprehensive Healthcare</h3>
-        <p>The city has 5 tertiary hospitals and over 200 medical institutions of various types, with advanced medical standards and a sound public health service system.</p>
-      </div>
+      <h2 id="healthcare">Healthcare</h2>
+      <p>The city has 5 tertiary hospitals and over 200 medical institutions of various types, with advanced medical standards and a sound public health service system. Healthcare services in Willowford are known for their quality and accessibility.</p>
 
-      <div class="feature-card">
-        <div class="icon">🌳</div>
-        <h3>Eco-friendly Living</h3>
-        <p>With scientific and rational urban planning, beautiful ecological environment, multiple city parks and green spaces, air quality remains excellent year-round.</p>
-      </div>
+      <h2 id="environment">Environment</h2>
+      <p>With scientific and rational urban planning, Willowford maintains a beautiful ecological environment. The city features multiple city parks and green spaces, and air quality remains excellent year-round. Environmental protection is a priority in all development initiatives.</p>
 
-      <div class="feature-card">
-        <div class="icon">💼</div>
-        <h3>Business Environment</h3>
-        <p>Efficient government services, strong policy support, and a vibrant entrepreneurial and innovation atmosphere. Rated as "Best Business Environment City" for multiple consecutive years.</p>
+      <h2 id="business">Business Environment</h2>
+      <p>The city offers efficient government services, strong policy support, and a vibrant entrepreneurial and innovation atmosphere. Willowford has been rated as <a href="#">"Best Business Environment City"</a> for multiple consecutive years, attracting both domestic and international investment.</p>
+
       </div>
     </div>
   </div>
